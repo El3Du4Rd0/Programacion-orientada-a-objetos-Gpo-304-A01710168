@@ -1,6 +1,11 @@
 # Programacion-orientada-a-objetos-Gpo-304-A01710168
-Mi codigo trata de modelar un pequeño de juego que solo buesca entretener un rato, por lo que mis clases se centran en plasmar los distintos tipos de enemigos y las acciones que puede hacer el jugador. 
+
+Juan Eduardo Rosas Ceron - A01710168
+
+Mi codigo trata de modelar un pequeño de juego que solo buesca entretener un rato, por lo que mis clases se centran en plasmar los distintos tipos de enemigos y las acciones que puede hacer el jugador, ademas de tener una clase partida la cual solo sirve para guardar información y mostrar las estadisticas y el menu del juego. 
 ## Funcionalidad
-Este codigo corre sobre consola a pantalla completa, e inicia con la aparicion de un enemigo en pantalla el cual debe ser eliminado escogiendo de un puñado de acciones que se presentan en pantalla, podras realizar una accion antes que el enemigo obtenga su oportunidad de atacarte. El juego finaliza cuando el jugador se quede sin puntos de salud, asi que tu objetivo final es eliminar a la mayor cantidad de enemigos antes de perder.
+Este codigo aun no esta completo y solo muestra el calculo de daño generado por numeros aleatorios, asi que cada vez que se ejecute el programa funcionará de forma diferente. 
 ## Consideraciones
-Mi codigo esta hecho completamente con C++ estandar
+Mi codigo esta hecho con C++ estandar
+
+Las librerias que utilize son: stdlib.h & time.h para poder inicializar el generador de numeros aleatorios. 
