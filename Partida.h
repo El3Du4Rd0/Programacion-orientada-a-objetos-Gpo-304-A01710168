@@ -1,4 +1,11 @@
-
+/*
+* Proyecto:
+* Juan Eduardo Rosas Cerón
+* A01710168
+* 13/06/2023
+* Esta clase estadefinida por la clase Partida que toma nota del estado general del juego, contanto el numero de persojes vivos, ademas
+* que cuenta con la clase Tienda que modifica los atributos de la clase Jugador y es parte de la clase Partida.
+*/
 
 #ifndef PARTIDA_H_
 #define PARTIDA_H_
@@ -10,6 +17,7 @@
 
 using namespace std;
 
+// clase Tienda
 class Tienda{
 
     public:
@@ -22,6 +30,11 @@ class Tienda{
     void mejorar_critico(Jugador *Per);
     void descansar( Jugador *Per);
 };
+
+/*
+* A continuacion se definen cada uno de los metodos de la clase Tienda los cuales modifica a coste de oro los atributos
+* de la clase Jugador, tambien se incluye un metodo el cual no cuata oro para que el jugador decida utilizarlo si no tiene oro.
+*/
 
 void Tienda::mejorar_vida(Jugador *Per){
     Per->set_oro( Per->get_oro() - 100);
@@ -66,6 +79,7 @@ void Tienda::descansar(Jugador *Per){
     Per->set_vida( Per->get_vida() + 25);
 }
 
+// clase Partida
 class Partida{
 
     private:
@@ -87,6 +101,7 @@ class Partida{
 
 };
 
+// metodo que muestra un pequeño menu el cual se meutran las opciones que puedes escoger para crear a tu jugador
 void Partida::print_creacion_jugador(){
     cout << "Escoge tu clase: " << endl;
     cout << "\t1. Guerrero" << endl;
@@ -106,6 +121,7 @@ void Partida::print_creacion_jugador(){
     cout << endl;
 }
 
+// metodo que muestra un pequeño menu el cual te muestra las opciones que puedes comprar y sus respectivos costes en oro
 void Partida::print_tienda(){
     cout << "\t-- Tienda --" << endl;
     cout << "1. mejorar vida. ( 100 )" << endl;
@@ -117,6 +133,7 @@ void Partida::print_tienda(){
     cout << "7. descansar ( gratis )" << endl;
 }
 
+// metodo el cual muestra en pantalla los atributos de los personajes que se encuentran en juego
 void Partida::print_personajes(){
     for(int i = 0; i < num_personajes; i++){
         cout << endl;
@@ -130,6 +147,7 @@ void Partida::print_personajes(){
     }
 }
 
+// metodo que utiliza los metodos de la clase tienda para modificar a la clase jugador
 void Partida::comprar(int num, Jugador *Per){
     if( Per->get_oro() > 0){
         switch (num){
@@ -164,12 +182,14 @@ void Partida::comprar(int num, Jugador *Per){
     }
 }
 
+// metodo para agregar personajes al vector que guarda los personajes en la clsae partida
 void Partida::agrega_personaje( Personaje *Per){
     personajes.push_back( Per );
     num_personajes = num_personajes + 1;
     cout << num_personajes << endl;
 }
 
+// metodo que elimina personajes del vector que guarda los personajes en la clase partida
 void Partida::elemina_personaje( Personaje *Per){
     auto aux = find( personajes.begin(), personajes.end(), Per);
     if (aux != personajes.end()) {
